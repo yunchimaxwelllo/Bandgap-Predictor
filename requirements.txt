@@ -1,0 +1,24 @@
+# Deep Learning & Math
+torch>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+
+# Materials Science Tools
+mp-api>=0.33.0
+pymatgen>=2023.10.4
+matminer>=0.9.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Utilities
+tqdm>=4.65.0
+python-dotenv>=1.0.0
+
+# Notebook Execution (Required for main.py)
+jupyter>=1.0.0
+nbconvert>=7.7.0

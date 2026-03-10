@@ -1,0 +1,17 @@
+Reduction Method,Model,MAE,RMSE,R2
+None (All Features),Ridge Regressor,0.5352,0.6434,0.1923
+None (All Features),Lasso Regressor,0.6094,0.7071,0.0246
+None (All Features),HistGradBoost,0.4408,0.5497,0.4105
+None (All Features),"MLP (128, 64)",0.4521,0.5973,0.304
+Magpie RFE (24/30),Ridge Regressor,0.5402,0.648,0.1809
+Magpie RFE (24/30),Lasso Regressor,0.6094,0.7071,0.0246
+Magpie RFE (24/30),HistGradBoost,0.4391,0.5484,0.4133
+Magpie RFE (24/30),"MLP (128, 64)",0.4503,0.6013,0.2947
+Magpie PCA (24/30),Ridge Regressor,0.5419,0.6494,0.1773
+Magpie PCA (24/30),Lasso Regressor,0.6101,0.7077,0.0229
+Magpie PCA (24/30),HistGradBoost,0.4476,0.5544,0.4004
+Magpie PCA (24/30),"MLP (128, 64)",0.4678,0.6216,0.2463
+Magpie RF Importance (24/30),Ridge Regressor,0.5402,0.648,0.1809
+Magpie RF Importance (24/30),Lasso Regressor,0.6094,0.7071,0.0246
+Magpie RF Importance (24/30),HistGradBoost,0.4396,0.5488,0.4125
+Magpie RF Importance (24/30),"MLP (128, 64)",0.4376,0.5808,0.3419

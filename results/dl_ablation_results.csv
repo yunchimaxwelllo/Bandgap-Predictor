@@ -1,0 +1,8 @@
+Experiment,Test MAE (eV),Test RMSE (eV),Test R2
+1. Multimodal (All Features),0.3785,0.5188,0.4749
+2. Multimodal (Magpie RFE),0.3733,0.5122,0.4882
+3. Multimodal (Magpie RF),0.3798,0.5175,0.4775
+4. Tabular Only (All),0.5663,0.6720,0.1191
+5. Tabular Only (Magpie RFE),0.5807,0.6905,0.0700
+6. Tabular Only (Magpie RF),0.5852,0.7124,0.0099
+7. XRD Patterns Only,0.5807,0.6905,0.0700
