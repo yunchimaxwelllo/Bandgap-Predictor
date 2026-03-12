@@ -14,7 +14,7 @@ All data is dynamically acquired and processed; no raw datasets are stored in th
 
 1. **API Querying:** Fetches crystal structures (CIF files) and target bandgaps from the Materials Project via `mp-api`. Filters applied for non-metallic crystalline structures containing 1 to 6 unique elements with bandgaps between 0.5 eV and 3.0 eV.
 
-2. **Structural Modality (1D XRD):** Using `pymatgen`, we simulated $Cu-K\alpha$ X-Ray Diffraction patterns. To enable neural network processing, these patterns were mapped to a continuous 1D grid ($2\theta \in [0^\circ, 90^\circ]$ with a 0.02° resolution) and broadened using a Gaussian kernel (FWHM = 0.02°). The arrays were normalized to a maximum intensity of 1.0.
+2. **Structural Modality (1D XRD):** Using `pymatgen`, we simulated $Cu-K\alpha$ X-Ray Diffraction patterns. To enable neural network processing, these patterns were mapped to a continuous 1D grid ($2\theta \in [10^\circ, 80^\circ]$ with a 0.02° resolution) and broadened using a Gaussian kernel (FWHM = 0.02°). The arrays were normalized to a maximum intensity of 1.0.
 
 3. **Tabular Modality:** We extracted 90 elemental statistics (e.g., mean, standard deviation, range of electronegativity, and atomic radii) using the `matminer` Magpie featurizer. Furthermore, we calculated 14 structural metrics, explicitly including 3 symmetry features, 1 volume per atom feature, and 10 geometrical descriptors via  `CrystalNN`.
 
@@ -149,7 +149,7 @@ To quantify the contribution of each data type, an ablation study was conducted 
 | Modality Setup | Test MAE (eV) | Test RMSE (eV) | Test R² |
 | :--- | :--- | :--- | :--- |
 | **Multimodal (Full Tabular + XRD)** | **0.3785** | **0.5188** | **0.4749** |
-| Tabular Only (Full 142 Features) | 0.5673 | 0.6720 | 0.1191 |
+| Tabular Only (Full Features) | 0.5673 | 0.6720 | 0.1191 |
 | XRD Patterns Only | 0.5915 | 0.6985 | 0.0481 |
 
 The multimodal network vastly outperforms either individual modality, indicating that neither input is sufficient to predict the bandgap in isolation. This is physically intuitive: XRD patterns capture crucial geometric information, such as lattice parameters and phase signatures, but lack the direct encoding of elemental electronegativity and atomic radii necessary to calculate electronic contributions. Conversely, tabular Magpie descriptors thoroughly summarize the chemical makeup but fail to preserve the exact spatial arrangement of the atoms. Only by fusing both modalities can the model access the complete structural-chemical profile required for accurate electronic property prediction.
